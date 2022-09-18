@@ -1,0 +1,34 @@
+STAR
+DEFINE NamaBarang, HargaBarang, TotalHarga, UangBayar, Kembali
+WRITE List Barang (kode, Nama, Harga)
+READ NamaPembeli, KodeBarang, JenisItem (b/s), JumlahBarang
+IF KodeBarang == "P01" Then
+    IF JenisItem == "B"
+        NamaBarang == "Sabun Cuci Botol"
+        HargaBarang == 10000
+    ELSE IF JenisItem == (S) Then
+        NamaBarang == "Sabun Cuci Shashet"
+        HargaBarang == 5000
+    ELSE 
+        Write Eror ("Jenis Item Tidak Ada")
+    End IF
+ELSE IF KodeBarang == (P02) Then
+     IF JenisItem == "B"
+        NamaBarang == "kecap Botol"
+        HargaBarang == 8000
+    ELSE IF JenisItem == (S) Then
+        NamaBarang == "Kecap Shashet"
+        HargaBarang == 500
+    ELSE 
+        Write Eror ("Jenis Item Tidak Ada")
+    End IF
+ELSE 
+     ("Kode Barang Tidak Ada")
+END IF 
+
+TotalHarga = (HargaBarang * JumlahBarang)
+WRITE NamaPembeli, NamaBarang, HargaBarang, JumlahBarang, TotalHarga
+READ UangBayar
+Kembali = (UangBayar - TotalHarga)
+WRITE Kembali
+END
